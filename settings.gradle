@@ -1,0 +1,28 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            url = uri("https://adsbynimbus-public.s3.amazonaws.com/android/sdks")
+            credentials {
+                username = "*"
+            }
+            content {
+                includeGroup("com.adsbynimbus.openrtb")
+                includeGroup("com.adsbynimbus.android")
+                includeGroup("com.iab.omid.library.adsbynimbus")
+            }
+        }
+    }
+}
+
+rootProject.name = "NimbusTest"
+include ':app'
